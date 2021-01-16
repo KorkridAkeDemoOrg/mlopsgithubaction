@@ -83,7 +83,7 @@ def main(args):
             'test': {'X': x_test, 'y': y_test}}
     
     # train a SVM classifier
-    svm_model = SVC(kernel=args.kernel, C=args.penalty, gamma='scale').fit(data['train']['X'], data['train']['y'])
+    svm_model = SVC(kernel=args.kernel, C=args.penalty, gamma='scale', verbose = True).fit(data['train']['X'], data['train']['y'])
     svm_predictions = svm_model.predict(data['test']['X'])
 
     # accuracy for X_test
